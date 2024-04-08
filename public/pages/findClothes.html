@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm quần áo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: calc(25% - 5px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button {
+            width: calc(15% - 5px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
+        .submit {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .back {
+            background-color: #ccc;
+            color: #000;
+        }
+        .submit.back {
+            width: auto;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Tìm kiếm quần áo</h2>
+        <form id="findForm" action="/read" method="GET">
+            <label for="name">Tên quần áo:</label>
+            <input type="text" id="name" name="name" autofocus>
+            
+            <button type="submit" class="submit">Tìm kiếm</button>
+            <button type="button" class="back" onclick="backHome()">Quay lại</button>
+            
+            <br>
+            <label for="brand">Thương hiệu:</label>
+            <input type="text" id="brand" name="brand">
+
+            <label for="price">Giá:</label>
+            <input type="text" id="lowPrice" name="lowPrice" placeholder="Từ/gte">
+            <input type="text" id="highPrice" name="highPrice" placeholder="Đến/lte">
+        </form>
+
+    </div>
+    <script type="text/javascript" src="/javascripts/find.js"></script>
+</body>
+</html>

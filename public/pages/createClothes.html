@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Clothes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .btnXanh {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .btnXanh:hover {
+            background-color: #0056b3;
+        }
+        .back-button {
+            background-color: #ccc;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+        }
+        .back-button:hover {
+            background-color: #bbb;
+        }
+        .error-text {
+        color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Create Clothes</h2>
+        <form id="createClothesForm" onload="setFocusName()">
+            <label for="clothesId" id="idLabel">Clothes ID:</label>
+            <input type="text" id="clothesId" name="id" required readonly>
+            
+            <label for="name" id="nameLabel">Clothes Name:</label>
+            <input type="text" id="nameClothes" name="nameClothes" required autofocus>
+
+            <label for="type">Types of Clothes:</label>
+            <input type="text" id="typesOfClothes" name="typesOfClothes" list="clothesList" required>
+            <datalist id="clothesList">
+                <option value="T-Shirt">T-Shirt</option>
+                <option value="Jeans">Jeans</option>
+                <option value="Shoes">Shoes</option>
+                <option value="Skirt">Skirt</option>
+                <option value="Coat">Coat</option>
+                <option value="Leggings">Leggings</option>
+                <option value="Jacket">Jacket</option>
+                <option value="Dress">Dress</option>
+                <option value="Trousers">Trousers</option>
+                <option value="Sweatshirt">Sweatshirt</option>
+                <option value="Boots">Boots</option>
+                <option value="Shorts">Shorts</option>
+                <option value="Sweater">Sweater</option>
+                <option value="Sandals">Sandals</option>
+                <option value="Pants">Pants</option>
+                <option value="Cap">Cap</option>
+            </datalist>
+
+            <label for="price">Price:</label>
+            <input type="text" id="price" name="price" required>
+
+            <label for="amount">Amount:</label>
+            <input type="text" id="amount" name="amount" required>
+
+            <label for="brand">Brand:</label>
+            <input type="text" id="brand" name="brand" required>
+
+            <label for="material">Material:</label>
+            <input type="text" id="material" name="material" required>
+
+            <label for="image">Image:</label>
+            <input type="file" id="image" name="image">
+
+            <button type="button" class="btnXanh" id="add" onclick="addClothes()">Add</button>
+            <button class="btnXanh" id="submit" onclick="submitClothes()">Submit Create Clothes</button>
+            <button class="back-button" onclick="backHome()">Back</button> <span class="error-text"></span>
+
+            <div id="message" style="color: rgb(0, 255, 0); margin-top: 10px;"></div>
+        </form>
+    </div>
+    
+    <script type="text/javascript" src="/javascripts/create.js"></script>    
+</body>
+</html>
